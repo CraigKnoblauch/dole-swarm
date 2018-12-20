@@ -38,19 +38,17 @@
 
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><strong>DNav</strong></li>
-  <li><a href="../classes/DRobot.html">DRobot</a></li>
+  <li><a href="../classes/DNav.html">DNav</a></li>
+  <li><strong>DRobot</strong></li>
 </ul>
 
 </div>
 
 <div id="content">
 
-<h1>Class <code>DNav</code></h1>
-<p>Responsible for maintaining navigational information, as well
- as providing navigational capabilities.</p>
-<p>
-</p>
+<h1>Class <code>DRobot</code></h1>
+<p>Wraps the functionality of OpenComputer's robot module</p>
+<p></p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Author</strong>: Craig Knoblauch</li>
@@ -60,8 +58,8 @@
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#DNav:new">DNav:new (x, y, z, facing)</a></td>
-	<td class="summary">Creates and returns a DNav object.</td>
+	<td class="name" nowrap><a href="#DRobot:new">DRobot:new (x, y, z, facing)</a></td>
+	<td class="summary">Creates and returns a DRobot object.</td>
 	</tr>
 </table>
 
@@ -73,12 +71,14 @@
 
     <dl class="function">
     <dt>
-    <a name = "DNav:new"></a>
-    <strong>DNav:new (x, y, z, facing)</strong>
+    <a name = "DRobot:new"></a>
+    <strong>DRobot:new (x, y, z, facing)</strong>
     </dt>
     <dd>
-    Creates and returns a DNav object.  Please note, the variables
- listed here are the only variables assosciated with this class.
+    Creates and returns a DRobot object.  The turtle's initial x, y, z
+ position and cardinal facing direction must be known on startup.
+ This information will be passed to <a href="../classes/DNav.html#">DNav</a> to maintain
+ navigational information
 
 
 
@@ -101,7 +101,7 @@
     <h3>Returns:</h3>
     <ol>
 
-        A new DNav object
+        A new DRobot object
 <p> TODO Error checking
     </ol>
 

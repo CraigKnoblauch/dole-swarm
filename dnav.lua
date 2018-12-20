@@ -1,6 +1,5 @@
 ---
--- Each turtle shall have an instance of this class. This class is
--- responsible for maintaining navigational information, as well
+-- Responsible for maintaining navigational information, as well
 -- as providing navigational capabilities. 
 --
 -- @classmod DNav
@@ -18,7 +17,7 @@ DNav.__index = DNav
 -- @param facing The turtle's starting cardinal direction
 -- @return A new DNav object
 --
--- @todo Error checking
+-- TODO Error checking
 function DNav.new(x, y, z, facing)
     local self = setmetatable({}, DNav)
 
