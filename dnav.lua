@@ -2,7 +2,8 @@
 -- Each turtle shall have an instance of this class. This class is
 -- responsible for maintaining navigational information, as well
 -- as providing navigational capabilities. 
--- @modclass DNav
+-- @classmod DNav
+-- @author Craig Knoblauch
 DNav = {
     x, -- int: x position of turtle
     y, -- int: y position of turtle
