@@ -1,0 +1,2 @@
+# December 20 2018
+@CraigKnoblauch set up the oppm config today and began on the navigation module. OOP in lua feels a little forced, but is supported none the less. Currently, dnav.lua attempts to implement objects. There's an error there somewhere, because the objects are not unique. 
