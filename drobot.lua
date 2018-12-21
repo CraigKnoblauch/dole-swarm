@@ -51,4 +51,40 @@ function DRobot.turnRight(self)
 
 end
 
+---
+-- Turns the turtle to the left. With the current facing direction,
+-- a new facing direction is determined and facing is updated
+--
+-- @param self The calling DRobot object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+function DRobot.turnLeft(self)
+
+    -- Request an update of the facing direction, given this is a 
+    -- 'left' turn
+    (self.my_dnav):updateFacing('left')
+
+    -- Turn the turtle left
+    -- TODO throw an exception if this cannot be completed.
+    robot.turnLeft()
+
+end
+
+---
+-- Turns the turtle around. With the current facing direction,
+-- a new facing direction is determined and facing is updated
+--
+-- @param self The calling DRobot object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+function DRobot.turnAround(self)
+
+    -- Request an update of the facing direction, given this is a 
+    -- 'left' turn
+    (self.my_dnav):updateFacing('around')
+
+    -- Turn the turtle around
+    -- TODO throw an exception if this cannot be completed.
+    robot.turnAround()
+
+end
+
 return DRobot
