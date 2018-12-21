@@ -85,4 +85,70 @@ function DNav.updateFacing(self, turn_type)
 
 end
 
+---
+-- Updates the turtle's postion given an intended direction. This 
+-- function must be called if and only if the move is successful.
+--
+-- @param self The calling DNav object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+-- @param direction The direction the turtle has moved. Appropriate
+-- entries are 'forward', 'back', 'up', and 'down'
+--
+-- TODO Through an exception if an entry is incorrect
+function DNav.updatePos(self, direction)
+    --[[
+        In Minecraft:
+        north --> -z
+        east  --> +x
+        south --> +z
+        west  --> -x
+        up    --> +y
+        down  --> -y
+    ]]
+    
+    -- What to do for each facing direction in the 'forward' case
+    if direction == 'forward' then
+
+        if self.facing = 'north' then
+            self.z = self.z - 1
+        elseif self.facing = 'east' then
+            self.x = self.x + 1
+        elseif self.facing = 'south' then
+            self.z = self.z + 1
+        elseif self.facing = 'west' then
+            self.x = self.x - 1
+        else
+            -- TODO throw an exception. This should NEVER happen
+        end
+
+    elseif direction == 'back' then
+
+        if self.facing = 'north' then
+            self.z = self.z + 1
+        elseif self.facing = 'east' then
+            self.x = self.x - 1
+        elseif self.facing = 'south' then
+            self.z = self.z - 1
+        elseif self.facing = 'west' then
+            self.x = self.x + 1
+        else
+            -- TODO throw an exception. This should NEVER happen
+        end
+
+    elseif direction == 'up' then
+
+        self.y = self.y + 1
+
+    elseif direction == 'down' then
+
+        self.y = self.y - 1
+
+    else
+
+        -- TODO throw an exception for an unknown direction
+
+    end -- end if direction
+
+end
+
 return DNav

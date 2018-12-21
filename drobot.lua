@@ -87,4 +87,95 @@ function DRobot.turnAround(self)
 
 end
 
+---
+-- Moves the turtle forward. Updates the turtle's postion
+-- appropriately
+--
+-- @param self The calling DRobot object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+function DRobot.forward(self)
+
+    if robot.forward() then
+
+        -- Request an update in postion, given this is a
+        -- successful forward movement
+        (self.my_dnav):updatePos('forward')
+
+    else
+
+        -- TODO throw an exception if this cannot be completed
+
+    end
+
+end
+
+---
+-- Moves the turtle backward. Updates the turtle's postion
+-- appropriately
+--
+-- @param self The calling DRobot object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+function DRobot.back(self)
+
+    if robot.back() then
+
+        -- Request an update in postion, given this is a
+        -- successful backward movement
+        (self.my_dnav):updatePos('back')
+
+    else
+
+        -- TODO throw an exception if this cannot be completed
+        
+    end
+
+end
+
+---
+-- Moves the turtle upward. Updates the turtle's postion
+-- appropriately
+--
+-- @param self The calling DRobot object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+function DRobot.up(self)
+
+    if robot.up() then
+
+        -- Request an update in postion, given this is a
+        -- successful upward movement
+        (self.my_dnav):updatePos('up')
+
+    else
+
+        -- TODO throw an exception if this cannot be completed
+        
+    end
+
+end
+
+---
+-- Moves the turtle downward. Updates the turtle's postion
+-- appropriately
+--
+-- @param self The calling DRobot object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+function DRobot.down(self)
+
+    if robot.down() then
+
+        -- Request an update in postion, given this is a
+        -- successful downward movement
+        (self.my_dnav):updatePos('down')
+
+    else
+
+        -- TODO throw an exception if this cannot be completed
+        
+    end
+
+end
+    
+    
+    
+
 return DRobot
