@@ -29,3 +29,60 @@ function DNav.new(x, y, z, facing)
     return self
 end
 
+---
+-- Updates facing attribute in accordance with the type of turn 
+-- specified. This function must be called BEFORE a turn is 
+-- executed.
+--
+-- @param self The calling DNav object. Does NOT need to be 
+-- provided if the ':' operator is used to call the function.
+-- @param turn_type A string. Possibilites are 'right', 'left', and
+-- 'around'.
+--
+-- TODO return error if turn type is unknown
+function DNav.updateFacing(self, turn_type)
+
+    -- Adjust self.facing for a 'left' turn
+    if turn_type == "left" then
+
+        if self.facing == "north" then
+            self.facing = "west"
+        elseif self.facing == "east" then
+            self.facing = "north"
+        elseif self.facing == "south" then
+            self.facing = "east"
+        elseif self.facing == "west" then
+            self.facing = "south"
+        end
+
+    -- Adjust self.facing for a 'right' turn
+    elseif turn_type == "right" then
+
+        if self.facing == "north" then
+            self.facing = "east"
+        elseif self.facing == "east" then
+            self.facing = "south"
+        elseif self.facing == "south" then 
+            self.facing = "west"
+        elseif self.facing == "west" then
+            self.facing = "north"
+        end
+
+    -- Adjust self.facing for an 'around' turn
+    elseif turn_type == "around" then
+
+        if self.facing == "north" then
+            self.facing = "south"
+        elseif self.facing == "east" then
+            self.facing = "west"
+        elseif self.facing == "south" then
+            self.facing = "north"
+        elseif self.facing == "west" then
+            self.facing = "east"
+        end
+
+    end
+
+end
+
+return DNav

@@ -24,11 +24,13 @@ DRobot.__index = DRobot
 --
 -- TODO Error checking
 function DRobot.new(x, y, z, facing)
+
     local self = setmetatable({}, DRobot)
 
-    self.my_dnav = dnav.Dnav.new(x, y, z, facing)
+    self.my_dnav = dnav.new(x, y, z, facing)
 
     return self
+
 end
 
 ---
@@ -37,8 +39,16 @@ end
 --
 -- @param self The calling DRobot object. Does NOT need to be 
 -- provided if the ':' operator is used to call the function.
---
--- TODO This function is intentionally incomplete for lua testing
-function DRobot.dTurnRight(self)
-    print(self.facing)
+function DRobot.turnRight(self)
+
+    -- Request an update of the facing direction, given this is a 
+    -- 'right' turn
+    (self.my_dnav):updateFacing('right')
+
+    -- Turn the turtle right
+    -- TODO throw an exception if this cannot be completed.
+    robot.turnRight()
+
 end
+
+return DRobot
