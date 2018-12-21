@@ -109,13 +109,13 @@ function DNav.updatePos(self, direction)
     -- What to do for each facing direction in the 'forward' case
     if direction == 'forward' then
 
-        if self.facing = 'north' then
+        if self.facing == 'north' then
             self.z = self.z - 1
-        elseif self.facing = 'east' then
+        elseif self.facing == 'east' then
             self.x = self.x + 1
-        elseif self.facing = 'south' then
+        elseif self.facing == 'south' then
             self.z = self.z + 1
-        elseif self.facing = 'west' then
+        elseif self.facing == 'west' then
             self.x = self.x - 1
         else
             -- TODO throw an exception. This should NEVER happen
@@ -123,13 +123,13 @@ function DNav.updatePos(self, direction)
 
     elseif direction == 'back' then
 
-        if self.facing = 'north' then
+        if self.facing == 'north' then
             self.z = self.z + 1
-        elseif self.facing = 'east' then
+        elseif self.facing == 'east' then
             self.x = self.x - 1
-        elseif self.facing = 'south' then
+        elseif self.facing == 'south' then
             self.z = self.z - 1
-        elseif self.facing = 'west' then
+        elseif self.facing == 'west' then
             self.x = self.x + 1
         else
             -- TODO throw an exception. This should NEVER happen
